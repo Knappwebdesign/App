@@ -1,13 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>Brandon Knapp | About ME</title>
+   <meta charset="UTF-8">
+   <title>Brandon Knapp | About ME</title>
 </head>
-<body>
 
-<div data-role="page" id="page">
-   <h1>Splash Screen</h1>
-</div>
-</body>
+   <body>
+
+   <div data-role="page" id="page">
+      <h1>Splash Screen</h1>
+   </div>
+
+   <script>
+   document.addEventListener('deviceready', function() {
+      navigator.splashscreen.hide();
+   });
+   </script>
+   </body>
 </html>
