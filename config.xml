@@ -45,6 +45,9 @@
       <icon src="img/ios/icon-76@2x.png" gap:platform="ios" width="152" height="152" />
 
    <!-- Splash Screen -->
+      <!-- Controls the splash screen hidinh -->
+      <preference name="auto-hide-splash-screen" value="false" />
+
       <!-- iPhone and iPod touch -->
       <gap:splash src="img/ios/Default.png" gap:platform="ios" width="320" height="480" />
 
