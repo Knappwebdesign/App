@@ -61,9 +61,19 @@
       <gap:splash src="img/ios/Default-Portrait.png" gap:platform="ios" width="1536" height="2048" />
 
    <!-- Plugins -->
+	   <!-- @note gap:platforms not working in PGB! -->
+	   <gap:platform name="ios" />
+	   <gap:platform name="android" minVersion="2.1"/>
 
-      <!-- InApp Browser -->
-      <gap:plugin name="com.phonegap.plugins.childbrowser" version="5.0.0" />
+	   <gap:plugin name="org.apache.cordova.inappbrowser" />
+
+	   <!-- PG version -->
+	   <preference name="phonegap-version" value="3.1.0" />
+
+	   <!-- We don't really need specific permissions, but PGB will add some.-->
+	   <preference name="permissions" value="none"/>
+
+	   <access origin="*" />
 
       <!-- Camera -->
       <gap:plugin name="org.apache.cordova.camera" version="0.2.9" />
