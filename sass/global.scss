@@ -1,1 +1,26 @@
-@import "_offcanvas.scss"; //Reset
+//////////////////////////////////////
+// Imports
+//////////////////////////////////////
+@import "_reset.scss"; // Reset
+@import "_normalize.scss"; // Normalize
+@import "_lemonade.scss"; // Grid
+@import "_variables.scss"; // Variables
+@import "_typography.scss"; // Typography
+@import "_navigation.scss"; // _navigation
+
+// Header
+.center-wrapper {
+
+   height: 50px;
+
+   h1 {
+
+      text-align: center;
+      font-size: 30px;
+      text-shadow: 0;
+      padding-top: 1%;
+      padding-bottom: 1%;
+
+   }
+
+}

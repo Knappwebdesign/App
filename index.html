@@ -1,56 +1,56 @@
 <!DOCTYPE html>
 <html>
 <head>
-   <meta charset="UTF-8">
    <title>Brandon Knapp | About ME</title>
-
+   <meta charset="utf-8" />
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" href="css/global.css" />
+   <link rel="stylesheet" href="css/Pct.css" />
+   <link rel="stylesheet" href="css/jquery.mobile.icons.min.css" />
+   <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.2/jquery.mobile.structure-1.4.2.min.css" />
+   <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+   <script src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
 </head>
 
    <body>
-      <div id="page">
 
-      <a href="#" class="open-panel"><i class="icon-reorder icon-2x"></i></a>
-
-      <nav>
-         <a href="#" class="close-panel"><i class="icon-remove-sign icon-large"></i></a>
-            <ul class="menu">
-               <li><a href="#">Menu Item</a></li>
-               <li><a href="#">Menu Item</a></li>
-               <li><a href="#">Menu Item</a></li>
-               <li><a href="#">Menu Item</a></li>
-               <li><a href="#">Menu Item</a></li>
-            </ul>
-      </nav>
-
-      <div id="content">
-         <h2>Page content</h2>
-         <p>Make the browser smaller, then click the hamburger icon to see it in action. For some reason the media queries aren't working on the Codepen Details page, so view it in editor mode.</p>
-         <p>Ducimus provident recusandae magnam omnis minima cumque nemo consequuntur ea aliquid amet distinctio sint iure molestiae necessitatibus quia nulla quasi dolorum tempora voluptas quaerat qui labore aspernatur atque fugiat quis vero fugit.</p>
-         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas tempore porro optio unde dignissimos nam? Reiciendis minus molestias quia delectus.</p>
-         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus provident recusandae magnam omnis minima cumque nemo consequuntur ea aliquid amet distinctio sint iure molestiae necessitatibus quia nulla quasi dolorum tempora voluptas quaerat qui labore aspernatur atque fugiat quis vero fugit.</p>
-         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas tempore porro optio unde dignissimos nam? Reiciendis minus molestias quia delectus.</p>
-         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus magni quasi possimus soluta quam dolores maiores hic voluptas deleniti amet harum iste voluptatibus minus cum praesentium eius odio atque assumenda reiciendis vel qui dolorem sapiente aperiam corporis explicabo adipisci voluptatum optio mollitia ipsum rerum. Numquam repudiandae maxime eveniet sed. Modi.</p>
+      <!-- Sis -->
+      <div data-role="page" id="page">
+         <div data-role="header">
+            <div class="center-wrapper">
+		         <h1>Penn college connection</h1>
+            </div>
+	      </div>
+         <div class="ui-grid-solo">
+            <div class="ui-block-a">
+               <input type="button" class="button" value="SIS">
+               <a href="#"
+            onClick="window.plugins.childBrowser.showWebPage('http://www.pct.edu/sis');"></a>
+            </div>
+         </div>
+         <div class="ui-grid-solo">
+            <div class="ui-block-a"><input type="button" value="SIS"></div>
+         </div>
+         <div class="ui-grid-solo">
+            <div class="ui-block-a"><input type="button" value="SIS"></div>
+         </div>
+         <div class="ui-grid-solo">
+            <div class="ui-block-a"><input type="button" value="SIS"></div>
+         </div>
+         <div class="ui-grid-solo">
+            <div class="ui-block-a"><input type="button" value="SIS"></div>
+         </div>
       </div>
 
-   </div><!-- #page -->
+      <div data-role="footer">
+         <h1></h1>
+      </div>
 
    <script>
    document.addEventListener('deviceready', function() {
       navigator.splashscreen.hide();
    });
    </script>
-   <script>
-      $(".open-panel").click(function(){
 
-         $("html").addClass("openNav");
-
-      });
-
-      $(".close-panel, #content").click(function(){
-
-      $("html").removeClass("openNav");
-
-   });
-   </script>
    </body>
 </html>
