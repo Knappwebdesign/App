@@ -195,7 +195,8 @@ html, body {
   .box h1 {
     text-align: center;
     padding-top: 3%;
-    font-size: 20px; }
+    font-size: 20px;
+    color: white; }
   .box a:link {
     color: white;
     text-decoration: none;

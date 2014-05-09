@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>Brandon Knapp | About ME</title>
+   <meta charset="utf-8" />
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" href="css/global.css" />
+   <link rel="stylesheet" href="css/Pct.css" />
+   <link rel="stylesheet" href="css/jquery.mobile.icons.min.css" />
+   <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.2/jquery.mobile.structure-1.4.2.min.css" />
+   <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+   <script src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
+   <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+   <script type="text/javascript" charset="utf-8">
+
+   // Wait for device API libraries to load
+   //
+      document.addEventListener("deviceready", onDeviceReady, false);
+
+   // device APIs are available
+   //
+      function onDeviceReady() {
+         var myContact = navigator.contacts.create({"displayName": "Test User"});
+            myContact.note = "This contact has a note.";
+            console.log("The contact, " + myContact.displayName + ", note: " + myContact.note);
+      }
+
+   </script>
+   <script type="text/javascript" charset="utf-8">
+
+      // Wait for device API libraries to load
+         document.addEventListener("deviceready", onDeviceReady, false);
+
+         // device APIs are available
+
+         function onDeviceReady() {
+            // find all contacts with 'Bob' in any name field
+            var options = new ContactFindOptions();
+            options.filter = "Bob";
+            var fields = ["displayName", "name"];
+            navigator.contacts.find(fields, onSuccess, onError, options);
+         }
+
+         // onSuccess: Get a snapshot of the current contacts
+
+         function onSuccess(contacts) {
+            for (var i = 0; i < contacts.length; i++) {
+               console.log("Display Name = " + contacts[i].displayName);
+            }
+         }
+
+         // onError: Failed to get the contacts
+
+         function onError(contactError) {
+            alert('onError!');
+         }
+   </script>
+   <script type="text/javascript" charset="utf-8">
+
+    // Wait for device API libraries to load
+    //
+    document.addEventListener("deviceready", onDeviceReady, false);
+
+    // device APIs are available
+    //
+
+    function onDeviceReady() {
+        // create a new contact
+        var contact = navigator.contacts.create();
+
+        // store contact phone numbers in ContactField[]
+        var phoneNumbers = [];
+        phoneNumbers[0] = new ContactField('work', '212-555-1234', false);
+        phoneNumbers[1] = new ContactField('mobile', '917-555-5432', true); // preferred number
+        phoneNumbers[2] = new ContactField('home', '203-555-7890', false);
+        contact.phoneNumbers = phoneNumbers;
+
+        // save the contact
+        contact.save();
+
+        // search contacts, returning display name and phone numbers
+        var options = new ContactFindOptions();
+        options.filter = "";
+        filter = ["displayName", "phoneNumbers"];
+        navigator.contacts.find(filter, onSuccess, onError, options);
+    }
+
+    // onSuccess: Get a snapshot of the current contacts
+    //
+    function onSuccess(contacts) {
+        for (var i = 0; i < contacts.length; i++) {
+            // display phone numbers
+            for (var j = 0; j < contacts[i].phoneNumbers.length; j++) {
+                alert("Type: "      + contacts[i].phoneNumbers[j].type  + "\n" +
+                      "Value: "     + contacts[i].phoneNumbers[j].value + "\n" +
+                      "Preferred: " + contacts[i].phoneNumbers[j].pref);
+            }
+        }
+    };
+
+    // onError: Failed to get the contacts
+    //
+    function onError(contactError) {
+        alert('onError!');
+    }
+
+    </script>
+    <script type="text/javascript" charset="utf-8">
+
+    // Wait for device API libraries to load
+    //
+    document.addEventListener("deviceready", onDeviceReady, false);
+
+    // device APIs are available
+    //
+    function onDeviceReady() {
+        // create
+        var contact = navigator.contacts.create();
+        contact.displayName = "Plumber";
+        contact.nickname = "Plumber";                 // specify both to support all devices
+        var name = new ContactName();
+        name.givenName = "Jane";
+        name.familyName = "Doe";
+        contact.name = name;
+
+        // save
+        contact.save(onSaveSuccess,onSaveError);
+
+        // clone
+        var clone = contact.clone();
+        clone.name.givenName = "John";
+        console.log("Original contact name = " + contact.name.givenName);
+        console.log("Cloned contact name = " + clone.name.givenName);
+
+        // remove
+        contact.remove(onRemoveSuccess,onRemoveError);
+    }
+
+    // onSaveSuccess: Get a snapshot of the current contacts
+    //
+    function onSaveSuccess(contact) {
+        alert("Save Success");
+    }
+
+    // onSaveError: Failed to get the contacts
+    //
+    function onSaveError(contactError) {
+        alert("Error = " + contactError.code);
+    }
+
+    // onRemoveSuccess: Get a snapshot of the current contacts
+    //
+    function onRemoveSuccess(contacts) {
+        alert("Removal Success");
+    }
+
+    // onRemoveError: Failed to get the contacts
+    //
+    function onRemoveError(contactError) {
+        alert("Error = " + contactError.code);
+    }
+
+    </script>
+</head>
+
+   <body>
+      <!-- Top Bar -->
+      <div class="container">
+         <div class="frame">
+            <div class="top-bar">
+               <h1>Contacts</h1>
+            </div>
+         </div>
+      </div>
+      <!-- InApp Browser -->
+      <div class="container">
+         <div class="frame">
+            <div class="bit-2">
+               <div class="box">
+                  <a><h1>Create Contact</h1></a>
+               </div>
+            </div>
+            <div class="bit-2">
+               <div class="box">
+                  <a><h1>Find Contacts</h1></a>
+               </div>
+            </div>
+            <div class="bit-2">
+               <div class="box">
+                  <a><h1>Your Contacts</h1></a>
+               </div>
+            </div>
+            <div class="bit-2">
+               <div class="box">
+                  <a><h1>Save/modify/remove</h1></a>
+               </div>
+            </div>
+         </div>
+      </div>
+
+      <div class="hr"></div>
+
+   </body>
+</html>

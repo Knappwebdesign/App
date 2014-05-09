@@ -80,6 +80,9 @@
 
       <!-- Contacts -->
       <gap:plugin name="org.apache.cordova.contacts" version="0.2.9" />
+      <feature name="Contacts">
+         <param name="ios-package" value="CDVContacts" />
+      </feature>
 
       <!-- Files -->
       <gap:plugin name="org.apache.cordova.file" version="1.0.1" />
